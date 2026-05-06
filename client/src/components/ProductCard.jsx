@@ -6,7 +6,7 @@ export default function ProductCard({ product, addToCart }) {
     <div className="col-md-4 mb-4">
       <div className="card h-100">
         <img
-          src={`http://localhost:8080/uploads/${product.image}`}
+          src={`https://e-commerce-backend-lasw.onrender.com/uploads/${product.image}`}
           className="card-img-top"
           style={{ height: "200px", objectFit: "cover" }}
         />
