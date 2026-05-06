@@ -83,7 +83,7 @@ export default function Cart({ cart, setCart }) {
                 {/* LEFT */}
                 <div className="d-flex align-items-center gap-3">
                   <img
-                    src={`https://e-commerce-backend-lasw.onrender.com/uploads/${product.image}`}
+                    src={`https://e-commerce-backend-lasw.onrender.com/uploads/${item.image}`}
                     width="60"
                     height="60"
                     style={{ objectFit: "cover", borderRadius: "5px" }}
