@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: "https://e-commerce-backend-lasw.onrender.com/api",
 });
 
 API.interceptors.request.use((req) => {
@@ -16,7 +16,7 @@ API.interceptors.request.use((req) => {
 
 
 export const loginUser = (data) => API.post("/auth/login", data);
-export const signupUser = (data) => API.post("/auth/signup", data);
+export const signupUser = (data) => API.post("/auth/register", data);
 
 export const getProducts = (query = "") =>
   API.get(`/products?q=${query}`);

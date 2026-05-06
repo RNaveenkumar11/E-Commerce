@@ -144,7 +144,7 @@ export default function Admin() {
             <div className="card shadow-sm">
 
               <img
-                src={`http://localhost:8080/uploads/${p.image}`}
+                src={`https://e-commerce-backend-lasw.onrender.com/uploads/${p.image}`}
                 onError={(e) =>
                   (e.target.src = "https://via.placeholder.com/300")
                 }
