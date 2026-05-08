@@ -6,6 +6,8 @@ import authRoutes from './routes/authRoutes.js'
 import cors from "cors";
 import productRoutes from './routes/productRoutes.js'
 import cartRoutes from "./routes/cartRoutes.js";
+import path from "path";
+
 
 
 const app = express()
@@ -17,7 +19,7 @@ app.use(cors())
 connectDb()
 
 
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 
 app.use("/api/products", productRoutes);
