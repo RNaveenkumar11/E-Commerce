@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import noImage from "../assets/no.png"
 
 
 export default function ProductCard({ product, addToCart }) {

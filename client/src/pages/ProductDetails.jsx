@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProduct } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import noImage from "../assets/no.png"
 
 export default function ProductDetails({ addToCart }) {
   const { id } = useParams();

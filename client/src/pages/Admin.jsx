@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
+import noImage from "../assets/no.png"
 
 export default function Admin() {
   const [products, setProducts] = useState([]);
@@ -146,7 +147,7 @@ export default function Admin() {
               <img
                 src={`https://e-commerce-backend-lasw.onrender.com/uploads/${p.image}`}
                 onError={(e) =>
-                  (e.target.src = "https://via.placeholder.com/300")
+                  (e.target.src = noImage)
                 }
                 className="card-img-top"
                 style={{ height: "200px", objectFit: "cover" }}
