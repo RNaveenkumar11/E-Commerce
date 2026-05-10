@@ -9,7 +9,7 @@ import {
 
 import authorizeRoles from '../middlewares/roleMiddleware.js'
 import verifyToken from "../middlewares/authMiddleware.js";
-import upload from '../middlewares/uploadMiddleware.js'
+
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.post(
   "/",
   verifyToken,
   authorizeRoles("admin"),
-  upload.single("image"),
+  
   createProduct
 );
 
@@ -30,7 +30,7 @@ router.put(
   "/:id",
   verifyToken,
   authorizeRoles("admin"),
-  upload.single("image"),
+  
   updateProduct
 );
 

@@ -11,7 +11,7 @@ export const createProduct = async (req, res) => {
       name,
       price,
       description,
-      image: req.file?.filename
+      image: req.body.image
     });
 
     await newProduct.save();
@@ -55,7 +55,7 @@ export const updateProduct = async (req, res) => {
     };
 
     if (req.file) {
-      updatedData.image = req.file.filename;
+      updatedData.image = req.body.image;
     }
 
     const updated = await Product.findByIdAndUpdate(

@@ -38,7 +38,7 @@ export default function ProductDetails({ addToCart }) {
 
         <div className="col-md-6 text-center">
           <img
-            src={`https://e-commerce-backend-lasw.onrender.com/uploads/${product.image}`}
+            src={product.image}
             className="img-fluid rounded shadow"
             style={{ maxHeight: "400px", objectFit: "cover" }}
           />

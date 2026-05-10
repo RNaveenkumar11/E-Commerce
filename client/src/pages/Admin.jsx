@@ -28,16 +28,34 @@ export default function Admin() {
     load();
   }, []);
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setForm({
+        ...form,
+        image: reader.result
+      });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const data = new FormData();
-      data.append("name", form.name);
-      data.append("price", form.price);
-      data.append("description", form.description);
-      if (form.image) data.append("image", form.image);
+      const data = {
+        name: form.name,
+        price: form.price,
+        description: form.description,
+        image: form.image
+      };
 
       if (editId) {
         await API.put(`/products/${editId}`, data);
@@ -116,7 +134,7 @@ export default function Admin() {
           <input
             type="file"
             className="form-control"
-            onChange={(e) => setForm({ ...form, image: e.target.files[0] })}
+            onChange={handleImageChange}
           />
         </div>
 
@@ -145,7 +163,7 @@ export default function Admin() {
             <div className="card shadow-sm">
 
               <img
-                src={`https://e-commerce-backend-lasw.onrender.com/uploads/${p.image}`}
+                src={p.image}
                 onError={(e) =>
                   (e.target.src = noImage)
                 }
